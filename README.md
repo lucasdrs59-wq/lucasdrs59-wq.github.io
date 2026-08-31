@@ -1,24 +1,93 @@
-# lucasdrs59-wq.github.io
+# Lucas Desrousseaux — Portfolio
 
-Version statique publiée du portfolio de Lucas Desrousseaux.
+[![CI](https://github.com/lucasdrs59-wq/lucasdrs59-wq.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/lucasdrs59-wq/lucasdrs59-wq.github.io/actions/workflows/ci.yml)
+[![Next.js](https://img.shields.io/badge/Next.js-16.3-10213D)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-3D68F5)](https://www.typescriptlang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-178F83.svg)](LICENSE)
 
-**Site public : [lucasdrs59-wq.github.io](https://lucasdrs59-wq.github.io)**
+Portfolio public de **Lucas Desrousseaux**, à l’intersection des méthodes, de
+l’industrialisation, de la métallurgie et de l’Industrie 4.0.
 
-## Source
+**Site : [lucasdrs59-wq.github.io](https://lucasdrs59-wq.github.io)**
 
-Le code source, les études de cas et la documentation de gouvernance se trouvent
-dans [portfolio-v2](https://github.com/lucasdrs59-wq/portfolio-v2).
+## Ce que montre ce dépôt
 
-Ce dépôt contient uniquement l’export généré par `npm run build`. Les
-modifications fonctionnelles doivent être réalisées dans le dépôt source, puis
-redéployées ici.
+- sept projets orientés problème → démarche → livrables → résultats ;
+- une interface claire, responsive et accessible ;
+- des filtres projets et aperçus interactifs sans dépendance front superflue ;
+- une publication statique compatible GitHub Pages ;
+- un standard de documentation, confidentialité et archivage réutilisable.
 
-## Déploiement
+Les situations industrielles sont anonymisées. Les chiffres, libellés et jeux de
+données publiables sont synthétiques ou suffisamment agrégés pour ne révéler
+aucune information interne.
 
-- source : `portfolio-v2/main` ;
-- format : export statique Next.js ;
-- cible : GitHub Pages, branche `main`, dossier racine ;
-- Jekyll : désactivé par `.nojekyll`.
+## Démarrage rapide
 
-L’état antérieur au nouveau portfolio reste disponible sur
-`archive/pre-premium-2026-08-27`.
+Prérequis : Node.js 22 et npm 10 ou supérieur.
+
+```bash
+git clone https://github.com/lucasdrs59-wq/lucasdrs59-wq.github.io.git
+cd lucasdrs59-wq.github.io
+npm ci
+npm run dev
+```
+
+Puis ouvrir [http://localhost:3000](http://localhost:3000).
+
+## Commandes
+
+| Commande | Usage |
+|---|---|
+| `npm run dev` | Serveur de développement |
+| `npm run lint` | Contrôle ESLint, zéro avertissement accepté |
+| `npm run typecheck` | Vérification TypeScript stricte |
+| `npm run build` | Export statique dans `out/` |
+| `npm run verify` | Lint + types + build |
+
+## Architecture
+
+```text
+.
+├── .github/                 # CI, Dependabot, modèles et responsabilités
+├── docs/
+│   ├── architecture/        # Décisions techniques
+│   ├── archive/             # Index des documents historiques
+│   ├── governance/          # Standards, archivage, confidentialité
+│   ├── infrastructure/      # Environnements, Vercel et Supabase
+│   └── projects/            # Modèle éditorial des études de cas
+├── public/
+│   └── brand/               # Identité LD et visuel social
+└── src/
+    ├── app/                 # Routes, SEO et pages
+    ├── components/          # Shell, logo, exploration des projets
+    └── lib/projects.ts      # Source unique du contenu projet
+```
+
+## Principes de contribution
+
+1. Ouvrir une branche courte depuis `main`.
+2. Garder les données industrielles hors du dépôt.
+3. Expliquer le pourquoi dans la PR et les décisions structurantes dans
+   `docs/architecture/`.
+4. Exécuter `npm run verify`.
+5. Fusionner puis supprimer la branche.
+
+Le détail se trouve dans [CONTRIBUTING.md](.github/CONTRIBUTING.md) et dans les
+[standards de dépôt](docs/governance/REPOSITORY_STANDARDS.md).
+
+La stratégie de déploiement, de secrets et de données est décrite dans la
+[documentation des environnements](docs/infrastructure/ENVIRONMENTS.md).
+
+## Archivage et sécurité
+
+- un instantané distant `archive/pre-unification-2026-08-31` conserve l’ancien export publié ;
+- les branches de travail sont supprimées après fusion ;
+- les versions publiées utilisent des tags sémantiques ;
+- les documents obsolètes sont indexés dans `docs/archive/YYYY/` ;
+- toute vulnérabilité doit être signalée selon [SECURITY.md](SECURITY.md).
+
+## Licence
+
+Code sous [licence MIT](LICENSE). Les textes, visuels personnels et marques
+employeurs restent attribués à leurs propriétaires respectifs.
