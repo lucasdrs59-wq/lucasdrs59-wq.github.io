@@ -1,5 +1,0 @@
-User-Agent: *
-Allow: /
-
-Host: https://lucasdrs59-wq.github.io
-Sitemap: https://lucasdrs59-wq.github.io/sitemap.xml
